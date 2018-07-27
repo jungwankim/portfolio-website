@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);body {
+  background: url("/../images/footer_lodyas.png");
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.eduction {
+  background: url("/../images/education.jpg") center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.project {
+  background: url("/../images/project.jpg") center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.work {
+  background: url("/../images/work.jpg") center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.footer {
+  background: url("/../images/footer_lodyas.png");
+  color: #eee;
+}
+
+.copyright {
+  background: #eee;
+  padding: 10px 0px;
+  -webkit-box-shadow: inset 0 5px 15px -5px #333;
+          box-shadow: inset 0 5px 15px -5px #333;
+}
+
+#section3 .col-sm-2 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#section3 .skillcon {
+  display: block;
+  font-size: 5em;
+  text-align: center;
+}
+
+.fluid {
+  display: block;
+  float: left;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+.footer .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.footer .social {
+  margin-top: 5em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.fa {
+  padding: 16px;
+  font-size: 25px;
+  width: 60px;
+  margin-left: 12px;
+  margin-right: 7px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  color: white;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #0077B5;
+  color: white;
+}
+
+.fa-github {
+  background: #eee;
+  color: black;
+}
+
