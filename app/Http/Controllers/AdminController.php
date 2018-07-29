@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use App\Project;
 use App\Skill;
+use App\User;
 use App\Work;
 use Illuminate\Http\Request;
 
@@ -33,6 +35,13 @@ class AdminController extends Controller
         $skills = Skill::get();
         $projects = Project::get();
         return view('adminLayouts.edit', compact('works', 'skills', 'projects'));
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $user = User::first();
+        \Mail::to($user)->send(new Contact($request));
+        return redirect()->back();
     }
 
 }

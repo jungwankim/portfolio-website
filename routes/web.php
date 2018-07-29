@@ -38,6 +38,8 @@ Route::get('/search', function () {
     return view('welcome');
 });
 
+Route::post('/contact/submit', 'AdminController@sendEmail');
+
 
 Route::get('/admin/form/work', 'AdminController@viewWorkForm');
 Route::post('/admin/form/work', 'WorkController@addWork');

@@ -42,11 +42,11 @@
 	</div>
 	<div class="row text-center mt-5 social">
 
-		<a href="#" class="fa fa-linkedin"></a>
+		<a href="https://www.linkedin.com/in/jungwan-kim-14790688/" class="fa fa-linkedin"></a>
 
-		<a href="#" class="fa fa-twitter"></a>
+		<a href="https://twitter.com/jkwan44267954" class="fa fa-twitter"></a>
 
-		<a href="#" class="fa fa-github"></a>
+		<a href="https://github.com/jungwankim" class="fa fa-github"></a>
 	</div>
 </div>
 

@@ -83,6 +83,7 @@ html,body{
 .footer {
 	p {
 		font-size: 14px;
+		color: aliceblue;
 	}
 	.row {
 		margin-left : 0;
@@ -111,7 +112,7 @@ html,body{
   opacity: 0.7;
   color: white;
   transform: translateY(-5px);
-  transition: ease-in 1s;
+  transition: ease-in 0.2s;
 }
 
 .fa-facebook {
