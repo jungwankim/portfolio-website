@@ -33,4 +33,19 @@ class WorkController extends Controller
         $work->addSkills(request('skills'));
     	return Redirect::back()->with('successMsg', 'Saved succesfully!');
     }
+
+
+    public function editWork(Work $work, Request $request) {
+        $work->fill(request(['company_name', 'position', 'location' , 'starting_date', 'ending_date', 'description']));
+        $work->skills()->detach();
+        $work->addSkills(request('skills'));
+        $work->save();
+        return redirect()->route('edit')->with('successMsg', 'Saved succesfully!');
+    }
+
+    public function deleteWork(Work $work) {
+        $work->skills()->detach();
+        $work->delete();
+        return redirect()->route('edit')->with('successMsg', 'Deleted succesfully!');
+    }
 }

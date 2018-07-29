@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
+use App\Skill;
+use App\Work;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,20 +15,24 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function viewSkillForm() {
-
-    	return view('adminLayouts.skillForm');
-   
+    public function viewSkillForm(Skill $skill) {
+    	return view('adminLayouts.skillForm', compact('skill'));
     }
 
-    public function viewProjectForm() {
-    	return view('adminLayouts.projectForm');
+    public function viewProjectForm(Project $project) {
+    	return view('adminLayouts.projectForm', compact('project'));
     }
 
-    public function viewWorkForm() {
-    	return view('adminLayouts.workForm');
+    public function viewWorkForm(Work $work) {
+    	return view('adminLayouts.workForm', compact('work'));
     }
 
+    public function viewEdit() {
+        $works = Work::get();
 
+        $skills = Skill::get();
+        $projects = Project::get();
+        return view('adminLayouts.edit', compact('works', 'skills', 'projects'));
+    }
 
 }

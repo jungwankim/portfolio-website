@@ -30,4 +30,20 @@ class SkillController extends Controller
     	return Redirect::back()->with('successMsg', 'Saved succesfully!');
     }
 
+
+    public function editSkill(Skill $skill, Request $request) {
+        $skill->category = $request->category;
+        $skill->name = $request->name;
+        $skill->save();
+        return redirect()->route('edit')->with('successMsg', 'Saved succesfully!');
+    }
+
+    public function deleteSkill(Skill $skill) {
+        $skill->works()->detach();
+        $skill->projects()->detach();
+        $skill->delete();
+        return redirect()->route('edit')->with('successMsg', 'Deleted succesfully!');
+    }
+
+
 }

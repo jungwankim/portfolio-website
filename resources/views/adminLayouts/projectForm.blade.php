@@ -1,15 +1,19 @@
 @extends('adminLayouts.adminmaster')
 @section('form')
-<div class="container">
+	@if(isset($project->id))
+	<form action="/admin/edit/projects/{{$project->id}}" method="post" role="form">
+		<h2>Edit Project Experience</h2>	
+	@else
 	<form action="/admin/form/project" method="post" role="form">
-		@csrf
 		<h2>Add Project Experience</h2>
+	@endif
+		@csrf
 		<hr>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Title</label>
-					<input type="text" class="form-control" name="title" required="">
+					<input type="text" class="form-control" name="title" value="{{$project->title}}" required="">
 				</div>
 			</div>
 		</div>
@@ -17,7 +21,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">SubTitle</label>
-					<input type="text" class="form-control" name="subtitle" required="">
+					<input type="text" class="form-control" name="subtitle" value="{{$project->subtitle}}" required="">
 				</div>
 			</div>
 		</div>
@@ -25,14 +29,14 @@
 			<div class="col-md-6">
 				<div class="form-group" >
 					<label for="">Starting Date - Nullable</label>
-					<input type="date" class="form-control" name="starting_date" >
+					<input type="date" class="form-control" name="starting_date" value="{{$project->starting_date}}">
 				</div>
 			</div>
 			<div class="col-md-6">
 				
 				<div class="form-group" >
 					<label for="">Ending Date - Nullable</label>
-					<input type="date" class="form-control" name="ending_date">
+					<input type="date" class="form-control" value="{{$project->ending_date}}" name="ending_date">
 				</div>
 			</div>
 		</div>
@@ -40,7 +44,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">URL - Nullable</label>
-					<input type="text" name="url" class="form-control" >
+					<input type="text" name="url" value="{{$project->url}}" class="form-control" >
 				</div>
 			</div>
 		</div>
@@ -48,7 +52,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Description</label>
-					<textarea name="description" class="form-control" rows="10" required=""></textarea>
+					<textarea name="description" class="form-control" rows="10" value="{{$project->description}}" required=""></textarea>
 				</div>
 			</div>
 		</div>
@@ -56,7 +60,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Related Skills</label>
-					<input type="text" class="form-control" name="skills">
+					<input type="text" class="form-control" name="skills" value = "@foreach ($project->skills()->get() as $skill){{$skill->category}}{{'@'.$skill->name}},@endforeach">
 				</div>
 			</div>
 		</div>
@@ -66,5 +70,4 @@
 
 		
 	</form>
-</div>
 @endsection

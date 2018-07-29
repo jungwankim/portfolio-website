@@ -1,15 +1,33 @@
 @extends('adminLayouts.adminmaster')
 @section('form')
-<div class="container">
+	@if(isset($skill->name))
+	<form action="/admin/edit/skills/{{$skill->name}}" method="post" role="form">
+		<h2>Edit Skill</h2>
+		<ul class="list-group">
+			<h3>related works</h3>
+				@foreach($skill->works()->get() as $work)
+					<li class="list-group-item">{{$work->company_name}} : {{$work->position}}</li>
+				@endforeach
+		</ul>
+
+		<ul class="list-group">
+			<h3>related projects</h3>
+				@foreach($skill->projects()->get() as $project)
+					<li class="list-group-item">{{$project->title}}</li>
+				@endforeach
+		</ul>
+
+	@else
 	<form action="/admin/form/skill" method="post" role="form">
-		@csrf
 		<h2>Add Skill</h2>
+	@endif
+		@csrf
 		<hr>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Category</label>
-					<input type="text" class="form-control" name="category" required="">
+					<input type="text" class="form-control" value="{{$skill->category}}" name="category" required="">
 				</div>
 			</div>
 		</div>
@@ -17,7 +35,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Skill Name</label>
-					<input type="text" class="form-control" name="name" required="">
+					<input type="text" class="form-control" value="{{$skill->name}}" name="name" required="">
 				</div>
 			</div>
 		</div>
@@ -25,5 +43,4 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 	</form>
-</div>
 @endsection

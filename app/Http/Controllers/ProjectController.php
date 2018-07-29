@@ -33,4 +33,15 @@ class ProjectController extends Controller
         $project->addSkills(request('skills'));
     	return Redirect::back()->with('successMsg', 'Saved succesfully!');
     }
+
+    public function editProject(Project $project) {
+
+        return view('home', compact($project));
+    }
+    
+    public function deleteProject(Project $project) {
+        $project->skills()->detach();
+        $project->delete();
+        return redirect()->route('edit')->with('successMsg', 'Deleted succesfully!');
+    }
 }

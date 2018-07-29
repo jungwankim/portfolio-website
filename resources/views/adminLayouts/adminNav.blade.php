@@ -14,19 +14,13 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#"> Skills</a></li>
-              <li><a href="#"> Projects</a></li> 
-              <li><a href="#"> Works</a></li>             
+              <li><a href="/admin/form/skill"> Skills</a></li>
+              <li><a href="/admin/form/project"> Projects</a></li> 
+              <li><a href="/admin/form/work"> Works</a></li>             
             </ul>
           </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Edit
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#"> Skills</a></li>
-              <li><a href="#"> Projects</a></li> 
-              <li><a href="#"> Works</a></li>             
-            </ul>
+          <li>
+             <a href="/admin/edit" >Edit</a> 
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -35,3 +29,5 @@
       </div>
     </div>
   </nav>
+
+
