@@ -26,9 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         $title = "my portfolio";
-        $works = Work::get();
-        $projects = Project::get();
-        $skills = Skill::orderBy('category')->get();
-        return view('layouts.home', compact(['title', 'works', 'projects', 'skills']));
+        return view('layouts.home', compact('title'));
     }
 }

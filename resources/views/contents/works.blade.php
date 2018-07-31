@@ -10,7 +10,10 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3>From {{$work->starting_date}} To {{$work->ending_date}}</h3>
+      <h3>
+        From {{ \Carbon\Carbon::parse($work->starting_date)->format('F Y')}} 
+        To {{ \Carbon\Carbon::parse($work->ending_date)->format('F Y')}} 
+      </h3>
     </div>
   </div>
   <div class="row">

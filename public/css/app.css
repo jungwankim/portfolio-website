@@ -7,47 +7,65 @@ body {
   height: 100%;
 }
 
-.carousel,
-.item,
-.active {
+.site {
+  width: 100%;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: black;
+  opacity: 0.5;
+}
+
+.education_heading {
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
+.education_heading h1 {
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+.fullscreen {
   height: 100%;
 }
 
-.carousel-inner {
-  height: 100%;
+.halfscreen {
+  min-height: 50vh !important;
+  max-height: 50vh;
 }
 
-.eduction {
+.education {
   background: url("/../images/education.jpg") center center fixed;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100%;
 }
 
 .project {
   background: url("/../images/project.jpg") center center fixed;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100%;
 }
 
 .work {
   background: url("/../images/work.jpg") center center fixed;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vh;
-}
-
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-
-.mt-0 {
-  margin-top: 0 !important;
+  min-width: 100%;
 }
 
 .footer {
-  background: url("/../images/footer_lodyas.png");
+  background: #00000059;
   color: #eee;
 }
 
@@ -58,12 +76,12 @@ body {
           box-shadow: inset 0 5px 15px -5px #333;
 }
 
-#section3 .col-sm-2 {
+#section1 .col-sm-2 {
   text-align: center;
   margin-top: 30px;
 }
 
-#section3 .skillcon {
+#section1 .skillcon {
   display: block;
   font-size: 5em;
   text-align: center;
@@ -76,6 +94,7 @@ body {
 
 .footer p {
   font-size: 14px;
+  color: #eee;
 }
 
 .footer .row {
@@ -84,9 +103,7 @@ body {
 }
 
 .footer .social {
-  margin-top: 5em;
-  margin-bottom: 1em;
-  text-align: center;
+  display: block;
 }
 
 .fa {
@@ -105,8 +122,8 @@ body {
   color: white;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
-  -webkit-transition: ease-in 1s;
-  transition: ease-in 1s;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
 }
 
 .fa-facebook {
@@ -127,5 +144,61 @@ body {
 .fa-github {
   background: #eee;
   color: black;
+}
+
+.icon-scroll,
+.icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+
+.icon-scroll {
+  width: 34px;
+  height: 70px;
+  margin-left: -17px;
+  margin-top: 120px;
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
 }
 

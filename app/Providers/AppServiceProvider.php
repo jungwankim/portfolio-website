@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Project;
+use App\Skill;
+use App\Work;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +17,22 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        view()->composer(['layouts.footer', 'layouts.home'], function($view) {
+
+            $works = Work::get();
+            $projects = Project::get();
+            $skills = Skill::orderBy('category')->get();
+
+            $data = [
+                'skills' => $skills,
+                'works' => $works,
+                'projects' => $projects,
+            ];
+
+            $view->with('skills', $skills)->with('projects', $projects)->with('works', $works);
+
+        });
+
     }
 
     /**

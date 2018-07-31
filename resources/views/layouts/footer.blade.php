@@ -1,4 +1,4 @@
-<div class="jumbotron bg-dark footer mb-0">
+<div class="jumbotron footer mb-0">
 	<div class="container">
 		<h3 class="mt-0">Quick Navigation</h3>
 		<div class="row">
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row text-center mt-5 social">
+	<div class="row text-center mt-5 social mb-3">
 
 		<a href="https://www.linkedin.com/in/jungwan-kim-14790688/" class="fa fa-linkedin"></a>
 

@@ -17,43 +17,72 @@ html,body{
 	height:100%;
 }
 
-.carousel, .item, .active{
-	height:100%;
+.site {
+	width: 100%;
 }
-.carousel-inner{
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: black;
+	opacity: 0.5;
+}
+
+.education_heading {
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+		   -moz-transform: translateX(-50%) translateY(-50%);
+		    -ms-transform: translateX(-50%) translateY(-50%);
+		     -o-transform: translateX(-50%) translateY(-50%);
+		        transform: translateX(-50%) translateY(-50%);
+
+	top: 50%;
+
+    position: absolute;
+    color: white;
+
+    text-align: center;	
+	
+	h1 {
+		margin-bottom: 30px;
+		font-size: 60px;
+
+	}
+}
+
+.fullscreen{
 	height:100%;
 }
 
-.eduction {
+.halfscreen {
+	min-height: 50vh !important;
+	max-height: 50vh;
+}
+
+.education {
 	background: url('/../images/education.jpg') center center fixed;
 	background-size: cover;
 	min-height: 100vh;
-	min-width: 100vh;
+	min-width: 100%;
 }
 
 .project {
 	background: url('/../images/project.jpg') center center fixed;
 	background-size: cover;
 	min-height: 100vh;
-	min-width: 100vh;	
+	min-width: 100%;	
 }
 
 .work {
 	background: url('/../images/work.jpg') center center fixed;
 	background-size: cover;
 	min-height: 100vh;
-	min-width: 100vh;
-}
-
-.mb-0 {
-	margin-bottom: 0 !important;
-}
-.mt-0 {
-	margin-top: 0 !important;
+	min-width: 100%;
 }
 
 .footer {
-	background: $background_url;
+	background: #00000059;
 	color: $white;
 }
 
@@ -63,7 +92,7 @@ html,body{
 	box-shadow: inset 0 5px 15px -5px #333;
 }
 
-#section3 {
+#section1 {
 	.col-sm-2 {
 		text-align: center;
 		margin-top: 30px;
@@ -83,16 +112,14 @@ html,body{
 .footer {
 	p {
 		font-size: 14px;
-		color: aliceblue;
+		color: $white;
 	}
 	.row {
 		margin-left : 0;
 		margin-right: 0;
 	}
 	.social {
-		margin-top: 5em;
-		margin-bottom: 1em;
-		text-align: center;
+		display: block;
 	}
 }
 
@@ -136,3 +163,44 @@ html,body{
   background: #eee;
   color:black;
 }
+
+
+.icon-scroll, .icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+
+.icon-scroll {
+	width: 34px;
+	height: 70px;
+	margin-left: -17px;
+	margin-top: 120px;
+	box-shadow: inset 0 0 0 1px #fff;
+	border-radius: 25px;
+}
+
+
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+	0% {
+		    opacity: 1;
+
+	}
+  100% {
+  	    opacity: 0;
+    transform: translateY(46px);
+	}
+}
+  

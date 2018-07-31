@@ -7,7 +7,7 @@ Route::get('/home', function() {
 });
 
 Route::get('/education', function () {
-    return view('welcome');
+    return view('contents.education')->with('title','hi');
 });
 
 Route::get('/works', function () {
