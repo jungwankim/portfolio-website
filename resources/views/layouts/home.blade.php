@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="jumbotron container">
+  <div class="skill-section jumbotron container">
     @include('contents.skills')
   </div>
 
@@ -26,7 +26,7 @@
   </div>
 
 
-  <div class="jumbotron container">
+  <div class="work-section jumbotron container">
     @include('contents.works')
   </div>
 
@@ -34,7 +34,7 @@
     
   </div>
 
-  <div class="jumbotron container">
+  <div class="project-section jumbotron container">
     @include('contents.projects')
   </div>
 
