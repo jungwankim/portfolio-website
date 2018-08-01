@@ -5,7 +5,7 @@
 
 <div id="scrollspy" data-spy="scroll" data-target="#navbar">
 
-  <div class="fullscreen education">
+  <div class="fullscreen welcome paraxify">
     
   </div>
 
@@ -21,7 +21,7 @@
     @include('contents.skills')
   </div>
 
-  <div class="halfscreen work" id="section2">
+  <div class="halfscreen work paraxify" id="section2">
 
   </div>
 
@@ -30,7 +30,7 @@
     @include('contents.works')
   </div>
 
-  <div class="halfscreen project" id="section3" >
+  <div class="halfscreen project paraxify" id="section3" >
     
   </div>
 

@@ -30,47 +30,7 @@
 </div>
 
 
-
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="panel panel-default">
+<div class="panel panel-default container">
 	<div class="panel-body">
 		<table class="table table-hover table-dark">
 			<thead>
@@ -85,7 +45,7 @@
 					<td>4</td>
 				</tr>
 				<tr>
-					<td>A--</td>
+					<td>A-</td>
 					<td>3.7</td>
 				</tr>
 				<tr>
@@ -114,92 +74,104 @@
 </div>
 
 
-
-
-
 <div class="container">
-	<div class="card-deck">
-  <div class="card bg-primary">
-    <div class="card-body text-center">
-    	<pre class="card-text">
-Science
-CHEM 110 Gerneral Chemistry 1			A 	B+
-CHEM 120 Gernerl Chemistry 2 			A 	B
-PHYS 131 Mechanics and Waves			A 	B-
-PHYS 142 Electromagnetism & Optics		A 	B-
-PHYS 257 Experimental Method 1			A-  B
-PHYS 251 Honours Classical Mechanics 1	B+  B+
-PHYS 260 Modern Physics and Relativity	B 	B-
-GPA 3.71
-GPA 2.95
-  		</pre>
+	<div class="card-group">
+  <div class="card bg-primary text-white">
+  	<div class="card-header">Science</div>
+    <div class="card-body text-left text-dark">
+    	<ul class="list-group">
+    		<li class="list-group-item">
+	    		CHEM 110 Gerneral Chemistry 1
+	    		<span class="badge">A</span>
+	    		<span class="badge">B+</span>			 	
+    		</li>
+    		<li class="list-group-item">CHEM 120 Gernerl Chemistry 2 			A 	B</li>
+    		<li class="list-group-item">PHYS 131 Mechanics and Waves			A 	B-</li>
+    		<li class="list-group-item">PHYS 142 Electromagnetism & Optics		A 	B-</li>
+    		<li class="list-group-item">PHYS 257 Experimental Method 1			A-  B</li>
+    		<li class="list-group-item">PHYS 251 Honours Classical Mechanics 1	B+  B+</li>
+    		<li class="list-group-item">PHYS 260 Modern Physics and Relativity	B 	B-</li>
+    		<li class="list-group-item">GPA 3.71</li>
+    		<li class="list-group-item">GPA 2.95</li>
+    	</ul>
     </div>
   </div>
-  <div class="card bg-warning">
-    <div class="card-body text-center">
-      	<pre class="card-text">
-Math
-MATH 133 Linear Algebra and Geometry	A 	B-
-Math 150 Calculus A 					A 	B-
-MATH 151 Calculus B						B 	B-
-MATH 248 Honours Advanced Calculus		A-	B+
-MATH 235 Algebra 1 						B+	B-
-MATH 270 Applied Linear Algebra			A 	B-
-MATH 263 ODEs for Engineers				A 	B+
-MATH 363 Discrete Mathematics			B+	B+
-MATH 323 Probablity 					B 	C+
-MATH 324 Statisitcs						B+	B
-GPA: 3.56
-GPA: 2.87
-  		</pre>
+  <div class="card bg-warning text-white">
+  	<div class="card-header">Math</div>
+    <div class="card-body text-left text-dark">
+    	<ul class="list-group">
+    		<li class="list-group-item">MATH 133 Linear Algebra and Geometry	A 	B-</li>
+    		<li class="list-group-item">Math 150 Calculus A 					A 	B-</li>
+    		<li class="list-group-item">MATH 151 Calculus B						B 	B-</li>
+    		<li class="list-group-item">MATH 248 Honours Advanced Calculus		A-	B+</li>
+    		<li class="list-group-item">MATH 235 Algebra 1 						B+	B-</li>
+    		<li class="list-group-item">MATH 270 Applied Linear Algebra			A 	B-</li>
+    		<li class="list-group-item">MATH 263 ODEs for Engineers				A 	B+</li>
+    		<li class="list-group-item">MATH 363 Discrete Mathematics			B+	B+</li>
+    		<li class="list-group-item">MATH 323 Probablity 					B 	C+</li>
+    		<li class="list-group-item">MATH 324 Statisitcs						B+	B</li>
+    		<li class="list-group-item">GPA 3.56</li>
+    		<li class="list-group-item">GPA 2.87</li>
+    	</ul>
     </div>
   </div>
-  <div class="card bg-success">
-    <div class="card-body text-center">
-		<pre class="card-text">
-Engineering Practice
-ECSE 191 Electrial Measurements  		B+	B
-ECSE 200 Electic Circuits 1				B+	B-
-ECSE 210 Electric Circuits 2			B+	C+
-FACC 100 Intro to the Eng. Professional	B+	B+
-FACC 400 Eng Professional Practice		A 	A
-GPA: 3.44
-GPA: 3.06
-  		</pre>    
-  	</div>
+  <div class="card bg-success text-white">
+  	<div class="card-header">Engineering Practice</div>
+  	 <div class="card-body text-left text-dark">
+    	<ul class="list-group">
+    		<li class="list-group-item">ECSE 191 Electrial Measurements  		B+	B</li>
+    		<li class="list-group-item">ECSE 200 Electic Circuits 1				B+	B-</li>
+    		<li class="list-group-item">ECSE 210 Electric Circuits 2			B+	C+</li>
+    		<li class="list-group-item">FACC 100 Intro to the Eng. Professional	B+	B+</li>
+    		<li class="list-group-item">FACC 400 Eng Professional Practice		A 	A</li>
+    		<li class="list-group-item">GPA 3.44</li>
+    		<li class="list-group-item">GPA 3.06</li>
+    	</ul>
+    </div>
   </div>
-  <div class="card bg-danger">
-    <div class="card-body text-center">
-		<pre class="card-text">
-Programming
-COMP 202 Foundation of programming 		A 	B
-COMP 206 Intro to Software Systmes 		A 	B+
-COMP 250 Intro to Computer Science 		B+	B
-ECSE 221 Intro to Computer Engineering 	A	B-
-ECSE 321 Intro to Software Engineering 	B+	A-
-COMP 302 Programming Lang & Paradigms	A 	B
-COMP 251 Algorithms and Data Structure	A 	B+
-ECSE 211 Design Principles and Methods 	B+	B+
-ECSE 322 Computer Engineering			C 	B-
-COMP 350 Numerical Computing			B+	B
-COMP 360 Algorithm Design				A-	B
-ECSE 427 Operating Systmes 				B 	B
-ECSE 429 Software Validation			B 	B+
-COMP 421 Database Systmes 				B 	B
-COMP 424 Artificial Intelligence		B+	B+
-COMP 557 Funamentals of Computer Graphics	B-	B
-COMP 322 Introduction to C++			A 	A-
-COMP 535 Computer Networks				A- 	B+
-COMP 551 Applied Machine Learning 		A- 	A-
-GPA:3.44
-GPA 3.17
-  		</pre>   
-  	</div>
+  <div class="card bg-danger text-white">
+  	 <div class="card-header">Programming</div>
+  	  <div class="card-body text-left text-dark">
+    	<ul class="list-group">
+    		<li class="list-group-item">COMP 202 Foundation of programming 		A 	B</li>
+    		<li class="list-group-item">COMP 206 Intro to Software Systmes 		A 	B+</li>
+    		<li class="list-group-item">COMP 250 Intro to Computer Science 		B+	B</li>
+    		<li class="list-group-item">ECSE 221 Intro to Computer Engineering 	A	B-</li>
+    		<li class="list-group-item">ECSE 321 Intro to Software Engineering 	B+	A-</li>
+    		<li class="list-group-item">COMP 302 Programming Lang & Paradigms	A 	B</li>
+    		<li class="list-group-item">COMP 251 Algorithms and Data Structure	A 	B+</li>
+    		<li class="list-group-item">ECSE 211 Design Principles and Methods 	B+	B+</li>
+    		<li class="list-group-item">COMP 360 Algorithm Design				A-	B</li>
+    		<li class="list-group-item">ECSE 322 Computer Engineering			C 	B-</li>
+    		<li class="list-group-item">ECSE 429 Software Validation			B 	B+</li>
+    		<li class="list-group-item">COMP 421 Database Systmes 				B 	B</li>
+    		<li class="list-group-item">COMP 424 Artificial Intelligence		B+	B+</li>
+    		<li class="list-group-item">COMP 557 Funamentals of Computer Graphics	B-	B</li>
+    		<li class="list-group-item">COMP 322 Introduction to C++			A 	A-</li>
+    		<li class="list-group-item">COMP 535 Computer Networks				A- 	B+</li>
+    		<li class="list-group-item">COMP 551 Applied Machine Learning 		A- 	A-</li> 
+    		<li class="list-group-item">GPA:3.44</li>
+    		<li class="list-group-item">GPA 3.17</li>
+    	</ul>
+    </div>
   </div> 
 </div>
 
 
-
+<ul class="list-group">
+	<li class="list-group-item">
+		
+		Item 1
+	</li>
+	<li class="list-group-item">
+		<span class="badge">10</span>
+		Item 2
+	</li>
+	<li class="list-group-item">
+		<span class="badge">15</span>
+		Item 3
+	</li>
+</ul>
 Courses I took
 
 

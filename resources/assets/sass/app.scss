@@ -60,22 +60,35 @@ html,body{
 	max-height: 50vh;
 }
 
+.welcome {
+	background: url('/../images/welcome.jpg') center center;
+	background-size: cover;
+	min-height: 100vh;
+	min-width: 100%;
+}
+
+.paraxify {
+  background-attachment: fixed !important;
+  background-position: center center;
+  background-size: cover;
+}
+
 .education {
-	background: url('/../images/education.jpg') center center fixed;
+	background: url('/../images/education.jpg') center center;
 	background-size: cover;
 	min-height: 100vh;
 	min-width: 100%;
 }
 
 .project {
-	background: url('/../images/project.jpg') center center fixed;
+	background: url('/../images/project.jpg') center center;
 	background-size: cover;
 	min-height: 100vh;
 	min-width: 100%;	
 }
 
 .work {
-	background: url('/../images/work.jpg') center center fixed;
+	background: url('/../images/work.jpg') center center;
 	background-size: cover;
 	min-height: 100vh;
 	min-width: 100%;
@@ -203,4 +216,21 @@ html,body{
     transform: translateY(46px);
 	}
 }
+
+.navbar .nav-dropdown {
+	color: rgba(0,0,0,.5);
+    display: block;
+    padding: .5rem 1rem;
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+@media (min-width: 576px) {
+	.card-group > .card {
+    -ms-flex: 1 0 0%;
+    flex: 258 20 49%;
+    margin-bottom: 0;
+	}
+}
+
   
