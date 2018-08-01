@@ -7,20 +7,9 @@ Route::get('/home', function() {
 });
 
 Route::get('/education', function () {
-    return view('contents.education')->with('title','hi');
+    return view('contents.education')->with('title','education');
 });
 
-Route::get('/works', function () {
-    return view('welcome');
-});
-
-Route::get('/projects', function () {
-    return view('welcome');
-});
-
-Route::get('/skills', function () {
-    return view('welcome');
-});
 
 Route::get('/works/{work}', function () {
     return view('welcome');
@@ -49,7 +38,6 @@ Route::post('/admin/form/project', 'ProjectController@addProject');
 
 Route::get('/admin/form/skill', 'AdminController@viewSkillForm');
 Route::post('/admin/form/skill', 'SkillController@addSkill');
-
 
 
 Route::get('/admin/edit', 'AdminController@viewEdit')->name('edit');
