@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('layouts.navigation')
 <div class="fullscreen education">
 	<div class="overlay">
 		
@@ -309,3 +310,8 @@
 			</div>
 		</div>
 		@endsection
+
+@section('script')
+<script src="/js/app.js"></script>
+
+@endsection

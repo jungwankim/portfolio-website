@@ -236,3 +236,37 @@ body {
   margin-bottom: 0;
 }
 
+.thumbnail-nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.thumbnail-nav img {
+  width: 100%;
+}
+
+.thumbnail-nav .item-link {
+  opacity: 0.6;
+}
+
+.thumbnail-nav .thumnail-img {
+  color: white;
+  width: 20%;
+  border: 3px grey solid;
+}
+
+.thumbnail-nav .active {
+  opacity: 1;
+}
+

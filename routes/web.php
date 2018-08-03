@@ -10,18 +10,18 @@ Route::get('/education', function () {
     return view('contents.education')->with('title','education');
 });
 
+Route::get('/works', 'WorkController@index');
+Route::get('/works/{work}', 'WorkController@index');
+Route::get('/works/work/{work}', 'WorkController@show');
 
-Route::get('/works/{work}', function () {
-    return view('welcome');
-});
+Route::get('/projects', 'ProjectController@index');
+Route::get('/projects/{project}', 'ProjectController@index');
+Route::get('/projects/project/{project}', 'ProjectController@show');
 
-Route::get('/projects/{project}', function () {
-    return view('welcome');
-});
+Route::get('/skills', 'SkillController@index');
+Route::get('/skills/{skill}', 'SkillController@index');
+Route::get('/skills/skill/{skill}', 'SkillController@show');
 
-Route::get('/skills/{skill}', function () {
-    return view('welcome');
-});
 
 Route::get('/search', function () {
     return view('welcome');

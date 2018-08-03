@@ -2,7 +2,7 @@
 @foreach($works as $work)
   <div class="row">
     <div class="col-md-6">
-      <h3>{{$work->company_name}}</h3>
+      <h3><a href="/works/{{$work->id}}" title="">{{$work->company_name}}</a></h3>
     </div>
     <div class="col-md-6">
       <h3>{{$work->position}}</h3>    

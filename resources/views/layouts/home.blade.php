@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-@include('layouts.navigation')
+@include('layouts.homenavigation')
 
 <div id="scrollspy" data-spy="scroll" data-target="#navbar">
 
@@ -47,6 +47,6 @@
 @endsection
 
 @section('script')
-<script src="/js/app.js"></script>
+<script src="/js/home.js"></script>
 
 @endsection

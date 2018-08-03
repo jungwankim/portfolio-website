@@ -10,10 +10,23 @@ class ProjectController extends Controller
 {
     //
     public function __construct() {
-    	$this->middleware('auth', ['except' => ['index']]);
+    	$this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
+    public function index(Project $project) {
 
+        $projects = Project::all('id', 'title');
+        $title = "My Projects";
+        if (!($project->exists)) {
+            $project = Project::first();
+        }
+        return view('contents.project', compact('projects', 'project', 'title'));
+    }
+
+    public function show(Project $project)
+    { 
+        return $project->toJson(JSON_PRETTY_PRINT);
+    }
 
     public function addProject(Request $request) {
 

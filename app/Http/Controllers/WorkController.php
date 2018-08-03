@@ -11,7 +11,20 @@ class WorkController extends Controller
     
 
     public function __construct() {
-    	$this->middleware('auth', ['except' => ['index']]);
+    	$this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    public function index (Work $work) {
+        $works = Work::all('id', 'company_name');
+        $title = "My Work Experiences";
+        if (!($work->exists)) {
+            $work = Work::first();
+        }
+        return view('contents.work', compact('works', 'work', 'title'));
+    }
+
+    public function show(Work $work) {
+        return $work->toJson(JSON_PRETTY_PRINT);
     }
 
     

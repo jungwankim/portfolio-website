@@ -60,45 +60,59 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
-/* 1 */
+
+/***/ 6:
 /***/ (function(module, exports) {
-
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
 $(function () {
 
-  $(".navbar-toggler").on("click", function (event) {
-    event.preventDefault();
-    $('.navbar-collapse').toggle();
-  });
+  var root = 'https://portfolio.app';
 
-  if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-    $('.paraxify').removeClass('paraxify');
-  }
+  $('.thumbnail-nav .item-link').on('click', function (event) {
+    event.preventDefault();
+    var request_uri = $(this).attr('href');
+    var dataset = $(this).attr('dataset');
+
+    $('.thumbnail-nav .item-link').removeClass('active');
+    $(this).addClass('active');
+
+    $.ajax({
+      url: root + request_uri,
+      method: 'GET'
+    }).then(function (data) {
+      if (dataset == "project") {
+        var project = JSON.parse(data);
+        $('.title').html(project.title);
+        $('.subtitle').html(project.subtitle);
+        $('.starting').html(project.starting_date);
+        $('.ending').html(project.ending_date);
+        $('.description').html(project.description);
+        $('.url').html(project.url);
+      } else {
+        var work = JSON.parse(data);
+        $('.company_name').html(work.company_name);
+        $('.position').html(work.position);
+        $('.location').html(work.location);
+        $('.starting').html(work.starting_date);
+        $('.ending').html(work.ending_date);
+        $('.description').html(work.description);
+      }
+    });
+  });
 });
 
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
 /***/ })
-/******/ ]);
+
+/******/ });
