@@ -15,6 +15,8 @@
 				@endphp
 				@foreach($projects as $proj)
 					<li class="thumnail-img">
+						<span class="thumbnail-title">{{$proj->title}}</span>
+
 						@if($index == $proj->id)
 							<a href="/projects/project/{{$proj->id}}" class="item-link active" dataset="project" title="">
 								<img src="/images/education.jpg" alt=""> 

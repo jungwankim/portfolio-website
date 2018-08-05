@@ -14,13 +14,24 @@ class SkillController extends Controller
     	$this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index() {
-
+    public function index(Skill $skill) {
+        $skills = Skill::all('id', 'name');
+        $title = "My Skills";
+        if (!($skill->exists)) {
+            $skill = Skill::first();
+        }
+        return view('contents.skill', compact('skills', 'skill', 'title'));
     }
 
-    public function show(Skill $skill)
-    {
-        # code...
+    public function show(Skill $skill) {
+        $works = $skill->works()->pluck('id', 'company_name')->toArray();
+        $projects = $skill->projects()->pluck('id', 'title')->toArray();
+        $data = [
+            'works' => $works,
+            'projects' =>$projects,
+        ];
+
+        return $data;
     }
 
     public function addSkill(Request $request) {

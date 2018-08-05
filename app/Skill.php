@@ -12,6 +12,10 @@ class Skill extends Model
         'category', 'name',
     ];
 
+    protected $visible = [
+        'category', 'name'
+    ];
+    
     public function works()
     {	
 

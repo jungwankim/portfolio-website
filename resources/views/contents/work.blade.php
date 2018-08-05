@@ -15,6 +15,8 @@
 				@endphp
 				@foreach($works as $wk)
 					<li class="thumnail-img">
+						<span class="thumbnail-title">{{$wk->company_name}}</span>
+
 						@if($index == $wk->id)
 							<a href="/works/work/{{$wk->id}}" class="item-link active" dataset="work" title="">
 								<img src="/images/education.jpg" alt=""> 

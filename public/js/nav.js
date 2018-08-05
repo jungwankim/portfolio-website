@@ -76,12 +76,15 @@ module.exports = __webpack_require__(6);
 /***/ 6:
 /***/ (function(module, exports) {
 
+
+
 $(function () {
 
   var root = 'https://portfolio.app';
 
   $('.thumbnail-nav .item-link').on('click', function (event) {
     event.preventDefault();
+    var skill = $(this).attr('title');
     var request_uri = $(this).attr('href');
     var dataset = $(this).attr('dataset');
 
@@ -100,7 +103,7 @@ $(function () {
         $('.ending').html(project.ending_date);
         $('.description').html(project.description);
         $('.url').html(project.url);
-      } else {
+      } else if (dataset == 'work') {
         var work = JSON.parse(data);
         $('.company_name').html(work.company_name);
         $('.position').html(work.position);
@@ -108,6 +111,28 @@ $(function () {
         $('.starting').html(work.starting_date);
         $('.ending').html(work.ending_date);
         $('.description').html(work.description);
+      } else {
+        console.log($(this));
+        $('.skill').html('<h1>' + skill + '</h1>');
+        $('.projects').html("");
+        $('.works').html("");
+        var works = data.works;
+        var projects = data.projects;
+        if (!$.isEmptyObject(works)) {
+          $('.works').append("<h3>Realted Works</h3>");
+          for (var _work in works) {
+            var line = "<a href='/works/" + works[_work] + "'>" + _work + "</a><br/>";
+            $('.works').append(line);
+          }
+        }
+
+        if (!$.isEmptyObject(projects)) {
+          $('.projects').append("<h3>Realted Projects</h3>");
+          for (var _project in projects) {
+            var _line = "<a href='/projects/" + projects[_project] + "'>" + _project + "</a><br/>";
+            $('.projects').append(_line);
+          }
+        }
       }
     });
   });

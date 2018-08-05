@@ -243,7 +243,14 @@ html,body{
 		list-style: none;
 	    display: flex;
 	    flex-direction: row;
-	    justify-content: center;
+	    flex-wrap: nowrap;
+
+	    justify-content: safe;
+	   	-webkit-overflow-scrolling: touch;
+	   	-ms-overflow-style: -ms-autohiding-scrollbar; 
+
+	   	overflow-x: auto;
+	   	overflow-y: hidden;
 	    padding: 0;
 	    margin:0;
 	}
@@ -252,7 +259,14 @@ html,body{
 		width: 100%;
 	}
 
-	.thumbnail-container {
+	.thumbnail-title {
+		    color: white;
+		    position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    transform: translateX(-50%) translateY(-50%);
+		    font-size: 24px;
+		    text-align: center;
 
 	}
 
@@ -262,13 +276,26 @@ html,body{
 
 	.thumnail-img {
 		color: white;
-	    width: 20%;
+	    width: 50%;
 	    border: 3px grey solid;
+	    flex: 0 0 auto;
+	    margin: auto;
+	    position: relative;
 	}
 
 	.active {
 		opacity: 1;
 	}
+}
+
+@media screen and (min-width: 768px) {
+	.thumbnail-nav .thumnail-img  {
+		width: 20%;
+	}
+}
+
+.list-group-item .badge {
+	display: none !important;
 }
 
   
