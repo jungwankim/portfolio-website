@@ -2,7 +2,7 @@
 
 $(function () {
 
-    const root = 'https://portfolio.app';
+    const root = env('SITE_NAME');
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
       event.preventDefault();
