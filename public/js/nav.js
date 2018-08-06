@@ -112,7 +112,6 @@ $(function () {
         $('.ending').html(work.ending_date);
         $('.description').html(work.description);
       } else {
-        console.log($(this));
         $('.skill').html('<h1>' + skill + '</h1>');
         $('.projects').html("");
         $('.works').html("");

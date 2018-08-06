@@ -52,7 +52,7 @@
 			<div class="col-md-12">
 				<div class="form-group" >
 					<label for="">Description</label>
-					<textarea name="description" class="form-control" rows="10" value="{{$project->description}}" required=""></textarea>
+					<textarea name="description" class="form-control" rows="10" required="">{{$project->description}}</textarea>
 				</div>
 			</div>
 		</div>

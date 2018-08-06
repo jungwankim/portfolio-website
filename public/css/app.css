@@ -39,6 +39,7 @@ body {
 
 .fullscreen {
   height: 100%;
+  position: relative;
 }
 
 .halfscreen {
@@ -47,7 +48,7 @@ body {
 }
 
 .welcome {
-  background: url("/../images/welcome.jpg") center center;
+  background: url("/../images/welcome.jpg") center bottom;
   background-size: cover;
   min-height: 100vh;
   min-width: 100%;
@@ -277,12 +278,17 @@ body {
 }
 
 .thumbnail-nav .item-link {
+  background: grey;
   opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .thumbnail-nav .thumnail-img {
   background: cadetblue;
   width: 50%;
+  height: 150px;
   border: 3px grey solid;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -293,6 +299,7 @@ body {
 }
 
 .thumbnail-nav .active {
+  background: transparent;
   opacity: 1;
 }
 
