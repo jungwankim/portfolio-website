@@ -72,7 +72,7 @@ html,body{
 
 .paraxify {
   background-attachment: fixed !important;
-  background-position: center center;
+  background-position: center bottom;
   background-size: cover;
 }
 
@@ -263,7 +263,7 @@ html,body{
 	}
 
 	.thumbnail-title {
-		    color: white;
+		    color: black;
 		    position: absolute;
 		    left: 50%;
 		    top: 50%;
@@ -278,12 +278,13 @@ html,body{
 	}
 
 	.thumnail-img {
-		color: white;
+		background: cadetblue;
 	    width: 50%;
 	    border: 3px grey solid;
 	    flex: 0 0 auto;
 	    margin: auto;
 	    position: relative;
+	    height: 150px;
 	}
 
 	.active {

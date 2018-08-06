@@ -69,12 +69,12 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="panel bg-info">
+		{{-- <div class="panel bg-info">
 			<div class="panel-body">
 				<p><span class="badge">A</span> : my grade</p>
 				<p><span class="badge badge-danger">A</span> : class average</p>
 			</div>
-		</div>
+		</div> --}}
 		<div class="card-group">
 			<div class="card bg-primary text-white">
 				<div class="card-header">Science</div>

@@ -21,7 +21,7 @@
     @include('contents.skills')
   </div>
 
-  <div class="halfscreen work paraxify" id="section2">
+  <div class="halfscreen work paraxify mb-5" id="section2">
 
   </div>
 
@@ -30,7 +30,7 @@
     @include('contents.works')
   </div>
 
-  <div class="halfscreen project paraxify" id="section3" >
+  <div class="halfscreen project paraxify mb-5" id="section3" >
     
   </div>
 

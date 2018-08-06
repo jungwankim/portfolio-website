@@ -14,15 +14,15 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-6 col-md-2 text-center mb-3">
         <i class="devicon-{{$skill->name}}-original devicon-{{$skill->name}}-plain colored skillcon"></i>
-        {{$skill->name}}
+        <a href="/skills/{{$skill->name}}" title="{{$skill->name}}">{{$skill->name}}</a>
 
       </div>
   @else
-    <div class="col-sm-2">
+    <div class="col-6 col-md-2 text-center mb-3">
       <i class="devicon-{{$skill->name}}-original devicon-{{$skill->name}}-plain colored skillcon"></i>
-      {{$skill->name}}
+       <a href="/skills/{{$skill->name}}" title="{{$skill->name}}">{{$skill->name}}</a>
     </div>
   @endif
   @php

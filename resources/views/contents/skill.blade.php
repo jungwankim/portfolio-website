@@ -18,11 +18,11 @@
 
 						@if($index == $ski->name)
 							<a href="/skills/skill/{{$ski->name}}" class="item-link active" dataset="skill" title="{{$ski->name}}">
-								<img src="/images/education.jpg" alt=""> 
+								{{-- <img src="/images/education.jpg" alt="">  --}}
 							</a>
 						@else
 							<a href="/skills/skill/{{$ski->name}}" class="item-link" dataset="skill" title="{{$ski->name}}">
-								<img src="/images/education.jpg" alt=""> 
+								{{-- <img src="/images/education.jpg" alt="">  --}}
 							</a>
 						@endif
 					</li>

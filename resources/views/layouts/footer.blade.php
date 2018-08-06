@@ -5,11 +5,13 @@
 			<div class="col-sm-6">
 				<h4>Skills</h4>
 				<div class="row">
+					<div class="col-sm-12">
 					@foreach($skills as $skill)
 						<div class="fluid">
-							<a href="" title=""><p>{{$skill->name}}, </p></a>
+							<a href="/skills/{{$skill->name}}" title="{{$skill->name}}"><p>{{$skill->name}}, </p></a>
 						</div>
 					@endforeach
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -18,7 +20,7 @@
 					<div class="col-sm-12">
 					@foreach($projects as $project)
 						<div class="fluid">
-							<a href="" title=""><p>{{$project->title}}, </p></a>
+							<a href="/projects/{{$project->id}}" title="{{$project->title}}"><p>{{$project->title}}, </p></a>
 						</div>
 					@endforeach
 
@@ -30,7 +32,7 @@
 					<div class="col-sm-12">
 					@foreach($works as $work)
 						<div class="fluid">
-							<a href="" title=""><p>{{$work->position}}, </p></a>
+							<a href="/works/{{$work->id}}" title="{{$work->position}}"><p>{{$work->position}}, </p></a>
 						</div>
 					@endforeach
 

@@ -19,12 +19,12 @@
 
 						@if($index == $wk->id)
 							<a href="/works/work/{{$wk->id}}" class="item-link active" dataset="work" title="">
-								<img src="/images/education.jpg" alt=""> 
-							</a>
+{{-- 								<img src="/images/education.jpg" alt=""> 
+ --}}							</a>
 						@else
 							<a href="/works/work/{{$wk->id}}" class="item-link" dataset="work" title="">
-								<img src="/images/education.jpg" alt=""> 
-							</a>
+{{-- 								<img src="/images/education.jpg" alt=""> 
+ --}}							</a>
 						@endif
 					</li>
 				@endforeach
