@@ -2,7 +2,7 @@
 
 $(function () {
 
-    const root = env('SITE_NAME');
+    const root = 'https://jkwan.info';
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
       event.preventDefault();
