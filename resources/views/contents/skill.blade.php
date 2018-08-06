@@ -35,13 +35,23 @@
 		<div class="card col-md-8">
 		  <div class="card-body">
 		  	<div class="skill">
-		  		
+		  		<h1>{{$skill->name}}</h1>
 		  	</div>
 		  	<div class="works">
-		  		
+		  		@if($skill->works()->count() > 0) 
+		  			<h3>Realted Works</h3>
+		  			@foreach($skill->works()->get() as $work)
+		  				<a href='/works/{{$work->id}}'>{{$work->company_name}}</a><br/>
+		  			@endforeach
+		  		@endif
 		  	</div>
 		  	<div class="projects">
-		  		
+		  		@if($skill->projects()->count() > 0) 
+		  			<h3>Realted Projects</h3>
+		  			@foreach($skill->projects()->get() as $project)
+		  				<a href='/projects/{{$project->id}}'>{{$project->title}}</a><br/>
+		  			@endforeach
+		  		@endif
 		  	</div>
 		  </div>
 		</div>
