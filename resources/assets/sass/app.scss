@@ -56,6 +56,7 @@ html,body{
 
 .fullscreen{
 	height:100%;
+	position: relative;
 }
 
 .halfscreen {
@@ -64,7 +65,7 @@ html,body{
 }
 
 .welcome {
-	background: url('/../images/welcome.jpg') center center;
+	background: url('/../images/welcome.jpg') center bottom;
 	background-size: cover;
 	min-height: 100vh;
 	min-width: 100%;
