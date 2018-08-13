@@ -18,6 +18,14 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group" >
+					<label for="">Short name for Nav</label>
+					<input type="text" class="form-control" name="short_name" value="{{$work->short_name}}" required="">
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group" >
 					<label for="">Position</label>

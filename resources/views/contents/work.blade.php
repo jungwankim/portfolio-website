@@ -15,7 +15,7 @@
 				@endphp
 				@foreach($works as $wk)
 					<li class="thumnail-img">
-						<span class="thumbnail-title">{{$wk->company_name}}</span>
+						<span class="thumbnail-title">{{$wk->short_name}}</span>
 
 						@if($index == $wk->id)
 							<a href="/works/work/{{$wk->id}}" class="item-link active" dataset="work" title="">
@@ -38,15 +38,19 @@
 			  	<h1 class="company_name card-title text-center text-capitalize">{{$work->company_name}}</h1>
 			  	<h3 class="position mb-2 text-center text-muted">{{$work->position}}</h3>
 			  	<h3 class="location mb-2 text-center text-muted">{{$work->location}}</h3>
-
-			  	<div class="col-6">
-					<div class="starting">{{$work->starting_date}}</div>
-				</div>
-				<div class="col-6">
-					<div class="ending">{{$work->ending_date}}</div>
-				</div>
+			  	<div class="row text-center mb-5">
+			  		<div class="col-12">
+						<div class="starting">
+							{{ \Carbon\Carbon::parse($work->starting_date)->format('F Y')}} 
+							~ 
+							{{ \Carbon\Carbon::parse($work->ending_date)->format('F Y')}}
+						</div>
+					</div>
+			  	</div>
 			    <div class="col-12">
-					<pre class="description">{{$work->description}}</pre>
+					<div class="description">
+						{!! $work->description !!}
+					</div>
 				</div>
 		 	</div>
 		</div>

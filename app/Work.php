@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Work extends Model
 {
     protected $fillable = [
-        'company_name', 'position', 'location', 'starting_date', 'ending_date', 'current_job', 'description',
+        'company_name', 'short_name', 'position', 'location', 'starting_date', 'ending_date', 'current_job', 'description',
     ];
 
 

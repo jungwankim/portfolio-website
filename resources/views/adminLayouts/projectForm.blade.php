@@ -20,6 +20,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group" >
+					<label for="">Short Name for Nav</label>
+					<input type="text" class="form-control" name="short_name" value="{{$project->short_name}}" required="">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group" >
 					<label for="">SubTitle</label>
 					<input type="text" class="form-control" name="subtitle" value="{{$project->subtitle}}" required="">
 				</div>

@@ -1,8 +1,9 @@
 
 
 $(function () {
-
-    const root = 'https://jkwan.info';
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+    const root = 'https://portfolio.app';
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
       event.preventDefault();
@@ -21,20 +22,35 @@ $(function () {
           let project = JSON.parse(data);
           $('.title').html(project.title);
           $('.subtitle').html(project.subtitle);
-          $('.starting').html(project.starting_date);
-          $('.ending').html(project.ending_date);
+          if(project.starting_date) {
+             $('.starting').html(project.starting_date);  
+             $('.ending').html(project.ending_date); 
+          }
+        
           $('.description').html(project.description);
           $('.url').html(project.url);
         }
         else if(dataset == 'work') {
           let work = JSON.parse(data);
+          let startingDate = new Date(work.starting_date);
+          let endingDate = new Date(work.ending_date);
           $('.company_name').html(work.company_name);
           $('.position').html(work.position);
           $('.location').html(work.location);
-          $('.starting').html(work.starting_date);
-          $('.ending').html(work.ending_date);
+
+          $('.starting').html(
+            monthNames[startingDate.getUTCMonth()] + 
+            " " +
+            startingDate.getFullYear() +
+            " ~ " +
+            monthNames[endingDate.getUTCMonth()] +
+            " " +
+            endingDate.getFullYear()
+          );
           $('.description').html(work.description);
         }
+
+
         else {
           $('.skill').html('<h1>'+skill+'</h1>');
           $('.projects').html("");

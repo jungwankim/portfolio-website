@@ -10,7 +10,7 @@ class Project extends Model
 {
 
 	 protected $fillable = [
-        'title', 'subtitle', 'starting_date', 'ending_date', 'url', 'description',
+        'short_name', 'title', 'subtitle', 'starting_date', 'ending_date', 'url', 'description',
     ];
 
 
@@ -23,23 +23,28 @@ class Project extends Model
 
     public function addSkills($skills)
     {
-    	# code...
-    	$skills = Str::lower($skills);
-    	$skillarray = explode(',', $skills);
-    	foreach ($skillarray as $rawskill) {
 
-    		$skill = explode('@', $rawskill);
-    		if (Skill::where('name', $skill[1])->exists()) {
-    			$this->skills()->attach(Skill::where('name', $skill[1])->first());
-    		}
-    		else {
-				$saved = $this->skills()->firstOrNew([
-	    			'category' => $skill[0],
-	    			'name' => $skill[1],
-	    		]);
-	    		$saved->save();
-	    		$this->skills()->attach($saved);
-    		}
-    	}
+
+        if(strlen($skills) > 1) {
+            $skills = Str::lower($skills);
+            $skillarray = explode(',', $skills);
+            foreach ($skillarray as $rawskill) {
+
+                $skill = explode('@', $rawskill);
+                if (Skill::where('name', $skill[1])->exists()) {
+                    $this->skills()->attach(Skill::where('name', $skill[1])->first());
+                }
+                else {
+                    $saved = $this->skills()->firstOrNew([
+                        'category' => $skill[0],
+                        'name' => $skill[1],
+                    ]);
+                    $saved->save();
+                    $this->skills()->attach($saved);
+                }
+            }
+        }
+    	# code...
+    	
     }
 }

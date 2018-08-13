@@ -15,7 +15,7 @@ class ProjectController extends Controller
 
     public function index(Project $project) {
 
-        $projects = Project::all('id', 'title');
+        $projects = Project::all('id', 'short_name');
         $title = "My Projects";
         if (!($project->exists)) {
             $project = Project::first();
@@ -33,6 +33,7 @@ class ProjectController extends Controller
         $this->validate(request(), [
 
             'title' => 'required',
+            'short_name' => 'required',
             'subtitle' => 'required',
             'starting_date' => 'nullable|date',
             'ending_date' => 'nullable|date',
@@ -42,14 +43,17 @@ class ProjectController extends Controller
         ]);
 
 
-    	$project = Project::create(request(['title', 'subtitle', 'starting_date', 'ending_date', 'url','description']));
+    	$project = Project::create(request(['title', 'short_name', 'subtitle', 'starting_date', 'ending_date', 'url','description']));
         $project->addSkills(request('skills'));
     	return Redirect::back()->with('successMsg', 'Saved succesfully!');
     }
 
     public function editProject(Project $project) {
-
-        return view('home', compact($project));
+        $project->fill(request(['title', 'short_name','subtitle', 'starting_date', 'ending_date', 'url','description']));
+        $project->skills()->detach();
+        $project->addSkills(request('skills'));
+        $project->save();
+        return redirect()->route('edit')->with('successMsg', 'Saved succesfully!');
     }
     
     public function deleteProject(Project $project) {

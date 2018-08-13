@@ -15,7 +15,7 @@
 				@endphp
 				@foreach($projects as $proj)
 					<li class="thumnail-img">
-						<span class="thumbnail-title">{{$proj->title}}</span>
+						<span class="thumbnail-title">{{$proj->short_name}}</span>
 
 						@if($index == $proj->id)
 							<a href="/projects/project/{{$proj->id}}" class="item-link active" dataset="project" title="">
@@ -44,7 +44,7 @@
 				<div class="ending">{{$project->ending_date}}</div>
 			</div>
 		    <div class="col-12">
-				<pre class="description">{{$project->description}}</pre>
+				<div class="description">{!! $project->description !!}</div>
 			</div>
 			<div class="col-12 text-center">
 				<div class="url card-link">

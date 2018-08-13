@@ -15,7 +15,7 @@ class WorkController extends Controller
     }
 
     public function index (Work $work) {
-        $works = Work::all('id', 'company_name');
+        $works = Work::all('id', 'short_name');
         $title = "My Work Experiences";
         if (!($work->exists)) {
             $work = Work::first();
@@ -33,6 +33,7 @@ class WorkController extends Controller
         $this->validate(request(), [
 
             'company_name' => 'required',
+            'short_name' => 'required',
             'position' => 'required',
             'location' => 'required',
             'starting_date' => 'required|date',
@@ -42,14 +43,14 @@ class WorkController extends Controller
         ]);
 
 
-    	$work = Work::create(request(['company_name', 'position', 'location' , 'starting_date', 'ending_date', 'description']));
+    	$work = Work::create(request(['company_name','short_name', 'position', 'location' , 'starting_date', 'ending_date', 'description']));
         $work->addSkills(request('skills'));
     	return Redirect::back()->with('successMsg', 'Saved succesfully!');
     }
 
 
     public function editWork(Work $work, Request $request) {
-        $work->fill(request(['company_name', 'position', 'location' , 'starting_date', 'ending_date', 'description']));
+        $work->fill(request(['company_name','short_name', 'position', 'location' , 'starting_date', 'ending_date', 'description']));
         $work->skills()->detach();
         $work->addSkills(request('skills'));
         $work->save();
