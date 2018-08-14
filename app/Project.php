@@ -9,9 +9,17 @@ use Illuminate\Support\Str;
 class Project extends Model
 {
 
-	 protected $fillable = [
+	protected $fillable = [
         'short_name', 'title', 'subtitle', 'starting_date', 'ending_date', 'url', 'description',
     ];
+
+    protected $appends = ['skill_tags'];
+
+    public function getSkillTagsAttribute()
+    {
+        $skillTag = $this->skills()->pluck('name')->all();
+        return $this->attributes['skill_tags'] = $skillTag;
+    }
 
 
     public function skills()
@@ -23,28 +31,6 @@ class Project extends Model
 
     public function addSkills($skills)
     {
-
-
-        if(strlen($skills) > 1) {
-            $skills = Str::lower($skills);
-            $skillarray = explode(',', $skills);
-            foreach ($skillarray as $rawskill) {
-
-                $skill = explode('@', $rawskill);
-                if (Skill::where('name', $skill[1])->exists()) {
-                    $this->skills()->attach(Skill::where('name', $skill[1])->first());
-                }
-                else {
-                    $saved = $this->skills()->firstOrNew([
-                        'category' => $skill[0],
-                        'name' => $skill[1],
-                    ]);
-                    $saved->save();
-                    $this->skills()->attach($saved);
-                }
-            }
-        }
-    	# code...
-    	
+        Skill::addSkills($this, $skills);
     }
 }

@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
 
             $works = Work::get();
             $projects = Project::get();
-            $skills = Skill::orderBy('category')->get();
+            $skills = Skill::where('visible', 1)->orderBy('category')->get();
 
             $data = [
                 'skills' => $skills,

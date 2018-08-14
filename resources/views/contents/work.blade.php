@@ -32,14 +32,16 @@
 		</div>
 	</div>
 
+	
+
 	<div class="d-flex justify-content-center mb-5">
 		<div class="card col-md-8">
 		  	<div class="card-body">
-			  	<h1 class="company_name card-title text-center text-capitalize">{{$work->company_name}}</h1>
-			  	<h3 class="position mb-2 text-center text-muted">{{$work->position}}</h3>
-			  	<h3 class="location mb-2 text-center text-muted">{{$work->location}}</h3>
-			  	<div class="row text-center mb-5">
-			  		<div class="col-12">
+			  	<h1 class="company_name card-title text-left text-capitalize">{{$work->company_name}}</h1>
+			  	<h3 class="position mb-2 text-left text-muted">{{$work->position}}</h3>
+			  	<h3 class="location mb-2 text-left text-muted">{{$work->location}}</h3>
+			  	<div class="text-left text-muted mb-5">
+			  		<div class="">
 						<div class="starting">
 							{{ \Carbon\Carbon::parse($work->starting_date)->format('F Y')}} 
 							~ 
@@ -47,7 +49,13 @@
 						</div>
 					</div>
 			  	</div>
-			    <div class="col-12">
+			  	<div class="related-skills text-left text-indent mb-5 ">
+			  		@foreach($work->skills()->get() as $skill)
+			  			<a class="skill-tag" href="/skills/{{$skill->name}}" title="{{$skill->name}}">{{$skill->name}}</a>
+			  		@endforeach
+				</div>
+			  
+			    <div class="col-12 mb-5">
 					<div class="description">
 						{!! $work->description !!}
 					</div>

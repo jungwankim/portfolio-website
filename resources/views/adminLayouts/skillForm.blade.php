@@ -16,7 +16,6 @@
 					<li class="list-group-item">{{$project->title}}</li>
 				@endforeach
 		</ul>
-
 	@else
 	<form action="/admin/form/skill" method="post" role="form">
 		<h2>Add Skill</h2>
@@ -26,7 +25,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group" >
-					<label for="">Category</label>
+					<label for="category">Category</label>
 					<input type="text" class="form-control" value="{{$skill->category}}" name="category" required="">
 				</div>
 			</div>
@@ -34,11 +33,23 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form-group" >
-					<label for="">Skill Name</label>
+					<label for="name">Skill Name</label>
 					<input type="text" class="form-control" value="{{$skill->name}}" name="name" required="">
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group" >
+					<label for="">visibility</label>
+					<input type="checkbox" name="visible" value="1" @if($skill->visible) checked @endif>
+				</div>
+			</div>
+		</div>
+
+
+
 		<div class="form-group" >
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>

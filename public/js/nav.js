@@ -99,13 +99,43 @@ $(function () {
         var project = JSON.parse(data);
         $('.title').html(project.title);
         $('.subtitle').html(project.subtitle);
+        $('.related-skills').html("");
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = project.skill_tags[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var skillTag = _step.value;
+
+            $('.related-skills').append("<a class='skill-tag' href='/skills/" + skillTag + "' title='" + skillTag + "'>" + skillTag + "</a>");
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+
         if (project.starting_date) {
           $('.starting').html(project.starting_date);
           $('.ending').html(project.ending_date);
         }
 
         $('.description').html(project.description);
-        $('.url').html(project.url);
+        if (!$.isEmptyObject(project.url)) {
+          $('.url').html("<a href='" + project.url + "' title='repository'>Git Repository</a>");
+        } else {
+          $('.url').html("");
+        }
       } else if (dataset == 'work') {
         var work = JSON.parse(data);
         var startingDate = new Date(work.starting_date);
@@ -113,6 +143,31 @@ $(function () {
         $('.company_name').html(work.company_name);
         $('.position').html(work.position);
         $('.location').html(work.location);
+        $('.related-skills').html("");
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+          for (var _iterator2 = work.skill_tags[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var _skillTag = _step2.value;
+
+            $('.related-skills').append("<a class='skill-tag' href='/skills/" + _skillTag + "' title='" + _skillTag + "'>" + _skillTag + "</a>");
+          }
+        } catch (err) {
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+              _iterator2.return();
+            }
+          } finally {
+            if (_didIteratorError2) {
+              throw _iteratorError2;
+            }
+          }
+        }
 
         $('.starting').html(monthNames[startingDate.getUTCMonth()] + " " + startingDate.getFullYear() + " ~ " + monthNames[endingDate.getUTCMonth()] + " " + endingDate.getFullYear());
         $('.description').html(work.description);

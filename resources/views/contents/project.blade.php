@@ -35,8 +35,13 @@
 	<div class="d-flex justify-content-center mb-5">
 		<div class="card col-md-8">
 		  <div class="card-body">
-		  	<h1 class="title card-title text-center text-capitalize">{{$project->title}}</h1>
-		  	<h3 class="subtitle mb-2 text-center text-muted">{{$project->subtitle}}</h3>
+		  	<h1 class="title mt-2 card-title text-capitalize">{{$project->title}}</h1>
+		  	<h3 class="subtitle mb-4 text-muted">{{$project->subtitle}}</h3>
+		  	<div class="related-skills text-left text-indent mb-5 ">
+		  		@foreach($project->skills()->get() as $skill)
+		  			<a class="skill-tag" href="/skills/{{$skill->name}}" title="{{$skill->name}}">{{$skill->name}}</a>
+		  		@endforeach
+		  	</div>
 		  	<div class="col-6">
 				<div class="starting">{{$project->starting_date}}</div>
 			</div>
@@ -48,7 +53,7 @@
 			</div>
 			<div class="col-12 text-center">
 				<div class="url card-link">
-					{{$project->url}}
+					<a href="{{$project->url}}" title="repository">Git Repository</a>
 				</div>
 		 	 </div>
 			</div>

@@ -1,13 +1,11 @@
 
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
-
-$white: #eee;
-$background_url: url('/../images/footer_lodyas.png');
-
+@import 'module';
 
 body {
 	background: $background_url;
@@ -54,6 +52,46 @@ html,body{
 	}
 }
 
+
+.icon-scroll, .icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+
+.icon-scroll {
+	width: 34px;
+	height: 70px;
+	margin-left: -17px;
+	margin-top: 120px;
+	box-shadow: inset 0 0 0 1px #fff;
+	border-radius: 25px;
+}
+
+
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+	0% {
+		    opacity: 1;
+
+	}
+  100% {
+  	    opacity: 0;
+    transform: translateY(46px);
+	}
+}
+
 .fullscreen{
 	height:100%;
 	position: relative;
@@ -64,6 +102,12 @@ html,body{
 	max-height: 50vh;
 }
 
+.paraxify {
+  background-attachment: fixed !important;
+  background-position: center bottom;
+  background-size: cover;
+}
+
 .welcome {
 	background: url('/../images/welcome.jpg') center bottom;
 	background-size: cover;
@@ -71,11 +115,6 @@ html,body{
 	min-width: 100%;
 }
 
-.paraxify {
-  background-attachment: fixed !important;
-  background-position: center bottom;
-  background-size: cover;
-}
 
 .education {
 	background: url('/../images/education.jpg') center center;
@@ -98,8 +137,12 @@ html,body{
 	min-width: 100%;
 }
 
+/*
+	Footer
+*/
+
 .footer {
-	background: #00000059;
+	background: rgba(0,0,0,0.34);
 	color: $white;
 }
 
@@ -182,44 +225,9 @@ html,body{
 }
 
 
-.icon-scroll, .icon-scroll:before {
-  position: absolute;
-  left: 50%;
-}
-
-.icon-scroll {
-	width: 34px;
-	height: 70px;
-	margin-left: -17px;
-	margin-top: 120px;
-	box-shadow: inset 0 0 0 1px #fff;
-	border-radius: 25px;
-}
-
-
-.icon-scroll:before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  margin-left: -4px;
-  top: 8px;
-  border-radius: 4px;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-name: scroll;
-}
-
-@keyframes scroll {
-	0% {
-		    opacity: 1;
-
-	}
-  100% {
-  	    opacity: 0;
-    transform: translateY(46px);
-	}
-}
+/*
+	Navigation
+*/
 
 .navbar .nav-dropdown {
 	color: rgba(0,0,0,.5);
@@ -264,7 +272,7 @@ html,body{
 	}
 
 	.thumbnail-title {
-		    color: black;
+		    color: white;
 		    position: absolute;
 		    left: 50%;
 		    top: 50%;
@@ -275,26 +283,25 @@ html,body{
 	}
 
 	.item-link {
-		background: grey;
+		background: #383d41;
 		opacity: 0.6;
 		position: absolute;
+		border-bottom: 3px white solid;
 	    width: 100%;
 	    height: 100%;
 	}
 
 	.thumnail-img {
-		background: cadetblue;
+		background: #222;
 	    width: 50%;
 	    height: 150px;
-	    border: 3px grey solid;
 	    flex: 0 0 auto;
-	    margin: auto;
 	    position: relative;
-	    height: 150px;
 	}
 
 	.active {
 		background: transparent;
+		border-bottom: 3px #dc3545 solid;
 		opacity: 1;
 	}
 }

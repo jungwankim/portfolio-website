@@ -22,13 +22,24 @@ $(function () {
           let project = JSON.parse(data);
           $('.title').html(project.title);
           $('.subtitle').html(project.subtitle);
+          $('.related-skills').html("");
+          for (let skillTag of project.skill_tags) {
+            $('.related-skills').append("<a class='skill-tag' href='/skills/"+skillTag+"' title='"+skillTag+"'>"+skillTag+"</a>");
+          }
+          
           if(project.starting_date) {
              $('.starting').html(project.starting_date);  
              $('.ending').html(project.ending_date); 
           }
+
         
           $('.description').html(project.description);
-          $('.url').html(project.url);
+          if(!($.isEmptyObject(project.url))) {
+              $('.url').html("<a href='"+project.url+"' title='repository'>Git Repository</a>");
+          }
+          else {
+              $('.url').html("");
+          }
         }
         else if(dataset == 'work') {
           let work = JSON.parse(data);
@@ -37,6 +48,10 @@ $(function () {
           $('.company_name').html(work.company_name);
           $('.position').html(work.position);
           $('.location').html(work.location);
+          $('.related-skills').html("");
+          for (let skillTag of work.skill_tags) {
+            $('.related-skills').append("<a class='skill-tag' href='/skills/"+skillTag+"' title='"+skillTag+"'>"+skillTag+"</a>");
+          }
 
           $('.starting').html(
             monthNames[startingDate.getUTCMonth()] + 

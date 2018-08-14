@@ -54,6 +54,7 @@ class SkillController extends Controller
     public function editSkill(Skill $skill, Request $request) {
         $skill->category = $request->category;
         $skill->name = $request->name;
+        $skill->visible = $request->visible;
         $skill->save();
         return redirect()->route('edit')->with('successMsg', 'Saved succesfully!');
     }
