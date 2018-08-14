@@ -16,7 +16,6 @@ class SkillController extends Controller
 
     public function index(Skill $skill) {
         $skills =  Skill::all('id', 'name')->filter(function($ski) { return ($ski->projects()->count() + $ski->works()->count())>0;});
-        // $skills = Skill::all('id', 'name');
         $title = "My Skills";
         if (!($skill->exists)) {
             $skill = Skill::first();
