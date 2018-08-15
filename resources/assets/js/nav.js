@@ -1,9 +1,13 @@
-
+require('./components/search.js');
 
 $(function () {
     const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
     const root = 'https://portfolio.app';
+
+    let posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
+    $('.thumbnail-container ul')[0].scrollTo($('.active').offset().left,0);
+
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
       event.preventDefault();

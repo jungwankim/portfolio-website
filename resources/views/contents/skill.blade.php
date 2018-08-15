@@ -17,11 +17,11 @@
 						<span class="thumbnail-title">{{$ski->name}}</span>
 
 						@if($index == $ski->name)
-							<a href="/skills/skill/{{$ski->name}}" class="item-link active" dataset="skill" title="{{$ski->name}}">
+							<a href="/skills/skill/{{$ski->name}}" class="item-link active" category="{{$ski->category}}" dataset="skill" title="{{$ski->name}}">
 								{{-- <img src="/images/education.jpg" alt="">  --}}
 							</a>
 						@else
-							<a href="/skills/skill/{{$ski->name}}" class="item-link" dataset="skill" title="{{$ski->name}}">
+							<a href="/skills/skill/{{$ski->name}}" class="item-link" category="{{$ski->category}}" dataset="skill" title="{{$ski->name}}">
 								{{-- <img src="/images/education.jpg" alt="">  --}}
 							</a>
 						@endif
@@ -30,6 +30,21 @@
 			</ul>
 		</div>
 	</div>
+
+	<div class="searchbar mb-5">
+		<form class=" col-10 col-md-8 d-flex justify-content-center mx-auto px-0" role="search">
+			<div class="col-8 col-md-10 col-lg-10 px-0">
+				<input id="search" type="text" class="form-control rounded-left" placeholder="Search" autocomplete="off">
+			</div>
+			
+			<button type="submit" class="btn btn-primary col-4 col-sm-2 px-0">Search</button>
+		</form>
+		<div class="col-10 col-md-8 mx-auto px-0">
+			<ul class="suggestion list-group">
+
+			</ul>
+		</div>
+	</div>				
 
 	<div class="d-flex justify-content-center mb-5">
 		<div class="card col-md-8">

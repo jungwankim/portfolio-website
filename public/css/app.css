@@ -8,6 +8,7 @@
   border-color: #343a40;
   border: 1px solid #dee2e6;
   background-color: #343a40;
+  line-height: 30px;
 }
 
 body {
@@ -103,6 +104,10 @@ body {
     -webkit-transform: translateY(46px);
             transform: translateY(46px);
   }
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .fullscreen {
