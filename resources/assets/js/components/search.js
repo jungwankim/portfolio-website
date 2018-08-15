@@ -54,7 +54,9 @@ $(function () {
                 let target = $(".thumbnail-nav .item-link[title='"+searchiItem+"']");
                 target.click();
                 let posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-                $('.thumbnail-container ul')[0].scrollTo(posL, 0);
+                $('.thumbnail-container ul').scrollLeft(posL);
+                $('#search').val("");
+
         }
        });
 

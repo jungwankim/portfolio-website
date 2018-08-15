@@ -86,7 +86,7 @@
 							<span class="badge badge-danger pull-right">B+</span>
 						</li>
 						<li class="list-group-item">
-							<p class="course">CHEM 120</p></p> Gernerl Chemistry 2
+							<p class="course">CHEM 120</p> Gernerl Chemistry 2
 							<span class="badge pull-right">A</span>
 							<span class="badge badge-danger pull-right">B</span>
 						</li>

@@ -53,7 +53,10 @@
 			</div>
 			<div class="col-12 text-center">
 				<div class="url card-link">
-					<a href="{{$project->url}}" title="repository">Git Repository</a>
+					@if($project->url)
+						<a href="{{$project->url}}" title="repository">Git Repository</a>
+
+					@endif
 				</div>
 		 	 </div>
 			</div>

@@ -20,7 +20,7 @@ $(function() {
 	const items = $(".navbar-nav .nav-link");
 
 	$.each(items, function() {
-		hash[$(this)[0].hash] = $($(this)[0].hash).offset().top - navHeight;
+		hash[$(this)[0].hash] =  $($(this)[0].hash).offset().top - navHeight;
 	})
 
 	$( window ).scroll(function() {
@@ -30,13 +30,18 @@ $(function() {
 	});
 
   $(".navbar-nav .nav-link").on("click", function(event){
-    event.preventDefault();
-      $(".navbar .active").removeClass("active");
-      $(this).addClass("active");
+      event.preventDefault();
+      let focusedNavLink = $(this);
       $('.navbar-collapse').hide();
       $('.dropdown-menu').hide();
       let topValue = hash[$(this)[0].hash];
-      window.scrollTo({ top: topValue, behavior: "smooth"});
+
+      $('html, body').animate({
+            scrollTop: topValue
+      }, 400, function() {
+           $(".navbar .active").removeClass("active");
+           focusedNavLink.addClass("active");
+      });
   });
 
   $(".navbar-brand").on("click", function(event){
@@ -44,7 +49,9 @@ $(function() {
       $('.navbar-collapse').hide();
       $('.dropdown-menu').hide();
       $(".navbar .active").removeClass("active");
-      window.scrollTo({ top: 0, behavior: "smooth"});
+      $('html, body').animate({
+            scrollTop: 0
+      }, 400);
    });
 
   $(".navbar-toggler").on("click", function(event) {

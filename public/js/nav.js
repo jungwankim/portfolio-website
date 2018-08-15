@@ -146,7 +146,8 @@ $(function () {
         var target = $(".thumbnail-nav .item-link[title='" + searchiItem + "']");
         target.click();
         var posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-        $('.thumbnail-container ul')[0].scrollTo(posL, 0);
+        $('.thumbnail-container ul').scrollLeft(posL);
+        $('#search').val("");
       }
     });
   });
@@ -173,7 +174,7 @@ $(function () {
   var root = 'https://portfolio.app';
 
   var posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-  $('.thumbnail-container ul')[0].scrollTo($('.active').offset().left, 0);
+  $('.thumbnail-container ul')[0].scrollTo(posL, 0);
 
   $('.thumbnail-nav .item-link').on('click', function (event) {
     event.preventDefault();

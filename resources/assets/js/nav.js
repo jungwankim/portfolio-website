@@ -6,7 +6,7 @@ $(function () {
     const root = 'https://portfolio.app';
 
     let posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-    $('.thumbnail-container ul')[0].scrollTo($('.active').offset().left,0);
+    $('.thumbnail-container ul')[0].scrollTo(posL,0);
 
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
