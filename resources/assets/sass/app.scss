@@ -40,7 +40,7 @@ html,body{
 	opacity: 0.5;
 }
 
-.education_heading {
+.main-heading {
 	left: 50%;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 		   -moz-transform: translateX(-50%) translateY(-50%);
@@ -48,7 +48,7 @@ html,body{
 		     -o-transform: translateX(-50%) translateY(-50%);
 		        transform: translateX(-50%) translateY(-50%);
 
-	top: 50%;
+	
 
     position: absolute;
     color: white;
@@ -62,6 +62,25 @@ html,body{
 	}
 }
 
+@keyframes show-heading{
+	from {
+		bottom:0;
+	}
+	to {
+		bottom:50%;
+	}
+}
+
+.education-heading {
+	top: 50%;
+}
+
+.welcome-heading {
+	bottom: 0;
+	animation-name: show-heading;
+	animation-duration: 8s;
+	animation-fill-mode: both;
+}
 
 .icon-scroll, .icon-scroll:before {
   position: absolute;
@@ -99,8 +118,8 @@ html,body{
 
 	}
   100% {
-  	    opacity: 0;
-    transform: translateY(46px);
+  	  opacity: 0;
+  	  transform: translateY(46px);
 	}
 }
 
@@ -124,13 +143,56 @@ html,body{
   background-size: cover;
 }
 
+
+@keyframes shooting-star {
+    to {
+        right: 3000px;
+        top: 3000px;
+    }
+}
+
+.sstar {
+	content: '';
+    width: 200px;
+    height: 2px;
+    right: -10px;
+    top: -50px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+    border-radius: 50%;
+    transform: rotateZ(135deg);
+    position: absolute;
+    animation-name: shooting-star;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+}
+
+.sstar2 {
+	right: 30px;
+    top: -50px;
+    animation-delay: 5s;
+}
+.sstar3 {
+	right: -100px;
+    top: 0px;
+    animation-delay: 2s;
+}
+
+
 .welcome {
 	background: url('/../images/welcome.jpg') center bottom;
 	background-size: cover;
 	min-height: 100vh;
 	min-width: 100%;
+	overflow: hidden;
 }
 
+.welcome-land {
+	background: url('/../images/land.png') center bottom;
+	background-size: cover;
+	min-height: 100vh;
+	min-width: 100%;
+	z-index: 10;
+}
 
 .education {
 	background: url('/../images/education.jpg') center center;

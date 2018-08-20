@@ -63,111 +63,23 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 12:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fuse_js__);
-
-$(function () {
-  var shelve = $('.thumbnail-nav .item-link').map(function () {
-    return {
-      category: this.getAttribute('category'),
-      skill: this.getAttribute('title')
-    };
-  }).get();
-  var suggestion = $('.suggestion');
-
-  var options = {
-    shouldSort: true,
-    threshold: 0.4,
-    location: 0,
-    distance: 5,
-    maxPatternLength: 32,
-    minMatchCharLength: 2,
-    keys: [{
-      name: "skill",
-      weight: 0.7
-    }, {
-      name: "category",
-      weight: 0.3
-    }]
-  };
-  var fuse = new __WEBPACK_IMPORTED_MODULE_0_fuse_js___default.a(shelve, options);
-
-  $('#search').on('keyup change', function () {
-    var result = fuse.search($(this).val());
-    suggestion.html('');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = result[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var item = _step.value;
-
-        var el = '<li class="suggested-item list-group-item pointer"><a href="#">' + item.skill + '</a></li>';
-        suggestion.append(el);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-
-    $('.suggested-item').on('click', function () {
-      $('#search').val($(this).text());
-      $('.suggestion').html('');
-      $('.searchbar form button').click();
-    });
-  });
-
-  $('.searchbar form').on('submit', function (event) {
-    event.preventDefault();
-    var searchiItem = $('#search').val();
-    var url = "/skills/" + searchiItem;
-    $.ajax({
-      url: url,
-      type: 'GET',
-      success: function success() {
-        var target = $(".thumbnail-nav .item-link[title='" + searchiItem + "']");
-        target.click();
-        var posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-        $('.thumbnail-container ul').scrollLeft(posL);
-        $('#search').val("");
-      }
-    });
-  });
-});
-
-/***/ }),
-
-/***/ 5:
+/******/ ([
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(6);
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 6:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__(12);
+__webpack_require__(7);
 
 $(function () {
   var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -292,8 +204,96 @@ $(function () {
 });
 
 /***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/***/ 7:
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fuse_js__);
+
+$(function () {
+  var shelve = $('.thumbnail-nav .item-link').map(function () {
+    return {
+      category: this.getAttribute('category'),
+      skill: this.getAttribute('title')
+    };
+  }).get();
+  var suggestion = $('.suggestion');
+
+  var options = {
+    shouldSort: true,
+    threshold: 0.4,
+    location: 0,
+    distance: 5,
+    maxPatternLength: 32,
+    minMatchCharLength: 2,
+    keys: [{
+      name: "skill",
+      weight: 0.7
+    }, {
+      name: "category",
+      weight: 0.3
+    }]
+  };
+  var fuse = new __WEBPACK_IMPORTED_MODULE_0_fuse_js___default.a(shelve, options);
+
+  $('#search').on('keyup change', function () {
+    var result = fuse.search($(this).val());
+    suggestion.html('');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = result[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var item = _step.value;
+
+        var el = '<li class="suggested-item list-group-item pointer"><a href="#">' + item.skill + '</a></li>';
+        suggestion.append(el);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    $('.suggested-item').on('click', function () {
+      $('#search').val($(this).text());
+      $('.suggestion').html('');
+      $('.searchbar form button').click();
+    });
+  });
+
+  $('.searchbar form').on('submit', function (event) {
+    event.preventDefault();
+    var searchiItem = $('#search').val();
+    var url = "/skills/" + searchiItem;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function success() {
+        var target = $(".thumbnail-nav .item-link[title='" + searchiItem + "']");
+        target.click();
+        var posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
+        $('.thumbnail-container ul').scrollLeft(posL);
+        $('#search').val("");
+      }
+    });
+  });
+});
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -1300,5 +1300,4 @@ module.exports = Fuse;
 //# sourceMappingURL=fuse.js.map
 
 /***/ })
-
-/******/ });
+/******/ ]);

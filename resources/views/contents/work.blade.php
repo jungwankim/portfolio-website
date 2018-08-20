@@ -49,7 +49,7 @@
 						</div>
 					</div>
 			  	</div>
-			  	<div class="related-skills text-left text-indent mb-5 ">
+			  	<div class="related-skills text-left text-indent mb-5 d-flex flex-wrap">
 			  		@foreach($work->skills()->get() as $skill)
 			  			<a class="skill-tag" href="/skills/{{$skill->name}}" title="{{$skill->name}}">{{$skill->name}}</a>
 			  		@endforeach

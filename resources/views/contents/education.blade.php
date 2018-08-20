@@ -5,7 +5,7 @@
 	<div class="overlay">
 		
 	</div>
-	<div class="education_heading">
+	<div class="main-heading education-heading">
 		<h1>McGill University</h1>
 		<h3>B.Sc Computer Science</h3>
 		<h4>Graduated 2017 Winter</h4>

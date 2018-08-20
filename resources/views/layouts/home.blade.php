@@ -6,8 +6,24 @@
 <div id="scrollspy" data-spy="scroll" data-target="#navbar">
 
   <div class="fullscreen welcome paraxify">
+    <div class="sstar">
+      
+    </div>
+    <div class="sstar sstar2">
+      
+    </div>
+    <div class="sstar sstar3">
+      
+    </div>
+    <div class="welcome-heading main-heading">
+      <h3>IT's a place where</h3> 
+      <h3>Make Wish Come True</h3>
+    </div>
+    <div class="fullscreen welcome-land paraxify">
     
+    </div>
   </div>
+
 
   <div class="jumbotron" id="section1">
     <div class="container">

@@ -48,19 +48,52 @@ body {
   opacity: 0.5;
 }
 
-.education_heading {
+.main-heading {
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  top: 50%;
   position: absolute;
   color: white;
   text-align: center;
 }
 
-.education_heading h1 {
+.main-heading h1 {
   margin-bottom: 30px;
   font-size: 60px;
+}
+
+@-webkit-keyframes show-heading {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: 50%;
+  }
+}
+
+@keyframes show-heading {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: 50%;
+  }
+}
+
+.education-heading {
+  top: 50%;
+}
+
+.welcome-heading {
+  bottom: 0;
+  -webkit-animation-name: show-heading;
+          animation-name: show-heading;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 .icon-scroll,
@@ -139,11 +172,68 @@ body {
   background-size: cover;
 }
 
+@-webkit-keyframes shooting-star {
+  to {
+    right: 3000px;
+    top: 3000px;
+  }
+}
+
+@keyframes shooting-star {
+  to {
+    right: 3000px;
+    top: 3000px;
+  }
+}
+
+.sstar {
+  content: '';
+  width: 200px;
+  height: 2px;
+  right: -10px;
+  top: -50px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border-radius: 50%;
+  -webkit-transform: rotateZ(135deg);
+          transform: rotateZ(135deg);
+  position: absolute;
+  -webkit-animation-name: shooting-star;
+          animation-name: shooting-star;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+.sstar2 {
+  right: 30px;
+  top: -50px;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.sstar3 {
+  right: -100px;
+  top: 0px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
 .welcome {
   background: url("/../images/welcome.jpg") center bottom;
   background-size: cover;
   min-height: 100vh;
   min-width: 100%;
+  overflow: hidden;
+}
+
+.welcome-land {
+  background: url("/../images/land.png") center bottom;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100%;
+  z-index: 10;
 }
 
 .education {
