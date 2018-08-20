@@ -16,8 +16,10 @@
       
     </div>
     <div class="welcome-heading main-heading">
-      <h3>IT's a place where</h3> 
-      <h3>Make Wish Come True</h3>
+      <h2>IT's a place </h2> 
+      <h2>where</h2>
+      <h2> Make Wish</h2>
+      <h2>Come True</h2>
     </div>
     <div class="fullscreen welcome-land paraxify">
     
