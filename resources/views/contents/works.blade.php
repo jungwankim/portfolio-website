@@ -1,4 +1,4 @@
-<h1>Work Experience</h1>
+<h1 class="mb-4">Work Experience</h1>
 @foreach($works as $work)
   <div class="row">
     <div class="col-md-6">

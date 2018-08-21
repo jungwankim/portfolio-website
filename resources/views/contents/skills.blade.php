@@ -1,4 +1,4 @@
-<h1>My Skills</h1>
+<h1 class="mb-4">My Skills</h1>
 @php
   $previous_skill_category = null;
 @endphp
@@ -10,7 +10,7 @@
     @endif
     <div class="row">
       <div class="col-sm-12">
-        <h3>{{$skill->category}}</h3>
+        <h3 class="mb-3">{{$skill->category}}</h3>
       </div>
     </div>
     <div class="row">

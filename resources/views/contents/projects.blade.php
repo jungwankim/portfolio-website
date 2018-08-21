@@ -1,4 +1,4 @@
-<h1>Projects</h1>
+<h1 class="mb-4">Projects</h1>
 @foreach($projects as $project)
   <div class="row">
     <div class="col-md-6">
