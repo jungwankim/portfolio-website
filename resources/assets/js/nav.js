@@ -11,6 +11,8 @@ $(function () {
 
     $('.thumbnail-nav .item-link').on('click', function(event) {
       event.preventDefault();
+      event.stopImmediatePropagation();
+
       let skill = $(this).attr('title');
       let request_uri = $(this).attr('href');
       let dataset = $(this).attr('dataset');
@@ -20,7 +22,8 @@ $(function () {
 
       $.ajax({
         url: root + request_uri,
-        method: 'GET'
+        method: 'GET',
+        dataType: "json"
       }).then(function(data) {
         if(dataset == "project") {
           let project = JSON.parse(data);

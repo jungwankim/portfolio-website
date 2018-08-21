@@ -90,6 +90,8 @@ $(function () {
 
   $('.thumbnail-nav .item-link').on('click', function (event) {
     event.preventDefault();
+    event.stopImmediatePropagation();
+
     var skill = $(this).attr('title');
     var request_uri = $(this).attr('href');
     var dataset = $(this).attr('dataset');
@@ -99,7 +101,8 @@ $(function () {
 
     $.ajax({
       url: root + request_uri,
-      method: 'GET'
+      method: 'GET',
+      dataType: "json"
     }).then(function (data) {
       if (dataset == "project") {
         var project = JSON.parse(data);
