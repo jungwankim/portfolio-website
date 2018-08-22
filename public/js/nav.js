@@ -86,7 +86,9 @@ $(function () {
   var root = 'https://portfolio.app';
 
   var posL = $('.thumbnail-container ul')[0].scrollLeft + $('.active').offset().left;
-  $('.thumbnail-container ul')[0].scrollTo(posL, 0);
+  $('.thumbnail-container ul').animate({
+    scrollLeft: posL
+  }, 400);
 
   $('.thumbnail-nav .item-link').on('click', function (event) {
     event.preventDefault();
@@ -101,11 +103,12 @@ $(function () {
 
     $.ajax({
       url: root + request_uri,
-      method: 'GET',
-      dataType: "json"
+      dataType: 'json',
+      method: 'GET'
+
     }).then(function (data) {
       if (dataset == "project") {
-        var project = JSON.parse(data);
+        var project = data;
         $('.title').html(project.title);
         $('.subtitle').html(project.subtitle);
         $('.related-skills').html("");
@@ -146,7 +149,7 @@ $(function () {
           $('.url').html("");
         }
       } else if (dataset == 'work') {
-        var work = JSON.parse(data);
+        var work = data;
         var startingDate = new Date(work.starting_date);
         var endingDate = new Date(work.ending_date);
         $('.company_name').html(work.company_name);
